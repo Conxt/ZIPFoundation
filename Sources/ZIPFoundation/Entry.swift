@@ -124,7 +124,7 @@ public struct Entry: Equatable {
         let dosLatinUSStringEncoding = CFStringConvertEncodingToNSStringEncoding(dosLatinUSEncoding)
         let codepage437 = String.Encoding(rawValue: dosLatinUSStringEncoding)
         let encoding = self.centralDirectoryStructure.usesUTF8PathEncoding ? .utf8 : codepage437
-        return self.path(using: encoding)
+        return self.path(using: .utf8)
     }
     /// The file attributes of the receiver as key/value pairs.
     ///
